@@ -1,16 +1,13 @@
-name: Publish
-
-on: [push]
+name: Take screenshot
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  create-screenshot:
+  screenshots:
     runs-on: ubuntu-latest
-    name: 'Schedule Screenshot Creation'
     steps:
-      - uses: websiteshot/github-action@main
-        env:
-          PROJECT_ID: ${{ secrets.PROJECT_ID }}
-          API_KEY: ${{ secrets.API_KEY }}
-          URLS: '[{"url": "https://youtubers-birthdays.kendalldoescoding.tech", "name": "Kendall"}]'
-          SCHEDULE_UNIT: 'm'
-          SCHEDULE_VALUE: '5'
+      - uses: karol-brejna-i/webpage-screenshot-action@v1
+        with:
+          url: https://youtubers-birthdays.kendalldoescoding.tech
