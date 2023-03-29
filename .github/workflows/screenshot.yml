@@ -11,6 +11,6 @@ jobs:
         env:
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
           API_KEY: ${{ secrets.API_KEY }}
-          URLS: '[{"url": "https://youtubers-birthdays.kendalldoescoding.tech/", "name": "Websiteshot"}]'
+          URLS: '[{"url": "https://youtubers-birthdays.kendalldoescoding.tech", "name": "Kendall"}]'
           SCHEDULE_UNIT: 'm'
           SCHEDULE_VALUE: '5'
