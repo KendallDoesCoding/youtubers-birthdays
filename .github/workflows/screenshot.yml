@@ -1,8 +1,9 @@
-name: Take screenshot
+name: Upload screenshot
 on:
+  workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   screenshots:
@@ -11,3 +12,7 @@ jobs:
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
           url: https://youtubers-birthdays.kendalldoescoding.tech
+      - uses: actions/upload-artifact@v3
+        with:
+          name: simple-screenshot
+          path: ${{ github.workspace }}/*.png
