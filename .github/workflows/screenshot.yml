@@ -1,0 +1,5 @@
+- name: Screenshot Website
+  uses: swinton/screenshot-website@v1.x
+  with:
+    source: https://youtubers-birthdays.kendalldoescoding.tech
+    destination: screenshot.png
