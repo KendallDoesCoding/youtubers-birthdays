@@ -9,6 +9,8 @@ h1 {
     margin-top: 50px;
 }
 .container {
+    min-height: 70vh;
+    min-width: fit-content;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -68,3 +70,27 @@ a:link {
     background-color: transparent;
     text-decoration: none;
   }
+
+
+  #pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #pagination button {
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+   
+ 
+  }
+
+  
+  #pagination button:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
