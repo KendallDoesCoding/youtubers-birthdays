@@ -7,6 +7,7 @@
 <body>
 	<div class="container">
 		<h1>YouTubers' Birthdays</h1>
+		<p>YouTubers on the list: <span class="count">0</span></p>
 		<table>
 			<thead>
 				<tr>
@@ -166,7 +167,13 @@
 		</table>
 		
 	</div>
-	<div id="pagination"><button id="left">⬅️</button> <button id="right">➡️</button></div>
+	<div id="pagination">
+		<button id="left">⬅️</button>
+		<p class="displayCurrentPage">
+			<span class="currentPage">0</span> / <span class="totalPages">0</span>
+		</p>
+		<button id="right">➡️</button>
+	</div>
 	<script src="index.js"></script>
 </body>
 </html>
