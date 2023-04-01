@@ -9,6 +9,8 @@ h1 {
     margin-top: 50px;
 }
 .container {
+    display: grid;
+    align-items: center;
     min-height: 70vh;
     min-width: fit-content;
     max-width: 800px;
@@ -94,3 +96,15 @@ a:link {
     cursor: default;
   }
   
+  /* Youtuber count */
+  .totalYtbCount{
+    margin: 0 auto;
+  }
+  .count{
+    font-weight: bold;
+  }
+
+  .displayCurrentPage{
+    font-weight: bold;
+  }
+

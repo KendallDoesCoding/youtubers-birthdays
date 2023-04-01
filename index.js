@@ -1,3 +1,4 @@
+// Selecting target elements
 const table = document.querySelector('table');
 const rows = table.querySelectorAll('tr');
 const rowsLength = rows.length - 1; // exclude header row
@@ -9,6 +10,13 @@ const leftBtn = document.getElementById('left');
 const rightBtn = document.getElementById('right');
 
 const totalPages = Math.ceil(rowsLength / rowsPerPage);
+
+// Youtuber count element above table
+const count = document.querySelector('.count');
+
+// List current page below table
+const  currentPageCount = document.querySelector('.currentPage');
+const  totalPageCount = document.querySelector('.totalPages');
 
 function showPage(page) {
     const startIndex = (page - 1) * rowsPerPage + 1;
@@ -25,22 +33,28 @@ function showPage(page) {
     }
 }
 
-function updateButtons() {
+function updatePaginationDiv() {
     leftBtn.disabled = currentPage === 1;
     rightBtn.disabled = currentPage === totalPages;
+    // update
+    currentPageCount.textContent = `${currentPage}`
+    totalPageCount.textContent = `${totalPages}`
 }
 
 showPage(currentPage);
-updateButtons();
+updatePaginationDiv();
 
 leftBtn.addEventListener('click', () => {
     currentPage--;
     showPage(currentPage);
-    updateButtons();
+    updatePaginationDiv();
 });
 
 rightBtn.addEventListener('click', () => {
     currentPage++;
     showPage(currentPage);
-    updateButtons();
+    updatePaginationDiv();
 });
+
+// Display Total Youtuber count in table
+count.textContent = `${rowsLength}`
