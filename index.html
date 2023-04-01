@@ -6,9 +6,14 @@
 </head>
 <body>
 	<div class="container">
+<form>
+  <input type="text" id="search-input" placeholder="Keyword...">
+  <button onclick="filterTable()" type="submit">Search</button>
+</form>
+
 		<h1>YouTubers' Birthdays</h1>
 		<p class="totalYtbCount">YouTubers on the list: <span class="count">0</span></p>
-		<table>
+		<table id="table">
 			<thead>
 				<tr>
 					<th>Category</th>
