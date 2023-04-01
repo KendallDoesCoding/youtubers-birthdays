@@ -6,13 +6,14 @@
 </head>
 <body>
 	<div class="container">
-<form>
-  <input type="text" id="search-input" placeholder="Keyword...">
-  <button onclick="filterTable()" type="submit">Search</button>
-</form>
-
 		<h1>YouTubers' Birthdays</h1>
 		<p class="totalYtbCount">YouTubers on the list: <span class="count">0</span></p>
+      <form style="display: flex; align-items: center; margin-top: 15px; margin-bottom: 10px;">
+        <input type="text" id="search-input" placeholder="Enter a keyword..." style="padding: 10px; border-radius: 5px; border: none; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); width: 30%;">
+        <button onclick="filterTable()" type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; border: none; margin-left: 10px; cursor: pointer;">Search</button>
+      </form>
+
+
 		<table id="table">
 			<thead>
 				<tr>
