@@ -97,6 +97,9 @@ a:link {
   }
   
   /* Youtuber count */
+  .totalYtbCount{
+    margin: 0 auto;
+  }
   .count{
     font-weight: bold;
   }
@@ -104,3 +107,4 @@ a:link {
   .displayCurrentPage{
     font-weight: bold;
   }
+
