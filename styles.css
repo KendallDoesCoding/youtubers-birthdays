@@ -104,3 +104,27 @@ a:active {
 .displayCurrentPage {
   font-weight: bold;
 }
+
+/* Search form */
+form {
+  display: flex;
+  align-items: center; 
+  margin-top: 15px; 
+  margin-bottom: 10px
+}
+#search-input {
+  padding: 10px; 
+  border-radius: 5px;
+  border: none; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  width: 30%;
+}
+#search-submit {
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px;
+  border-radius: 5px; 
+  border: none;
+  margin-left: 10px; 
+  cursor: pointer;
+}
