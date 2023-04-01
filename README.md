@@ -16,3 +16,5 @@ Thanks to ChatGPT -3 for helping with the project!!
 | Pranks        | Airrack         | June 22, 1995     | 102 million                   |
 | Pranks        | Fidias          | April 10, 1996    | 135.1 million                 |
 | First In Line | VicInTheGame    | May 26, 2000      | 100 million                   |
+
+Any contribution made, must abide in the projets [Contribution Guidelines](.github/CONTRIBUTING.md).
