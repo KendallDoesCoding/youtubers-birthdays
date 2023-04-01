@@ -11,8 +11,6 @@ If you are adding a YouTube Channel to the list, the channel must classify under
 **- The final decision on whether the channel gets added or not, is up to the discreation of KendallDoesCoding. **
 
 # Abiding in the Project Code Of Conduct
-Any contribution that you make must abide in the projects, code of conduct. Failure to abide will result in your Contribution/Pull Request being rejected.
+Any contribution that you make must abide in the projects, [Code of Conduct](/CODE_OF_CONDUCT.md). Failure to abide will result in your Contribution/Pull Request being rejected.
 
-
-Thanks,
-KendallDoesCoding
+Thanks for your co-operation!
