@@ -2,6 +2,9 @@ Inspiration from Famous Birthdays.
 
 Thanks to ChatGPT -3 for helping with the project!!
 
+**NOTE**: Any contribution made, must abide in the projects [Contributing Guidelines](.github/CONTRIBUTING.md).
+
+
 | YouTubers' Birthdays |
 | -------------------- |
 
@@ -48,7 +51,3 @@ Thanks to ChatGPT -3 for helping with the project!!
  YouTube/Awards             | JackSucksAtLife      | June 24, 1996                  | 589 million                             
  Variety                    | Timeworks            | June 29, 2001                  | 122 million                             
  I Spent A Day With ____    | Anthony Padilla      | September 16, 1987             | 611.1 million                           
-
-
-
-Any contribution made, must abide in the projects [Contributing Guidelines](.github/CONTRIBUTING.md).
