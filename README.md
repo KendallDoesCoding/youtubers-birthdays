@@ -1,4 +1,4 @@
-This is HTML code for a table with information about YouTube channels and their statistics. The table four columns: Channel Name, Date Created, Subscribers, and Views. Each row represents a different channel and its corresponding statistics. The code also includes a pagination feature with buttons to navigate between pages of the table.
+This project includes code for a website with a table with information about YouTube channels and their statistics. The table four columns: Channel Name, Date Created, Subscribers, and Views. Each row represents a different channel and its corresponding statistics. The code also includes a pagination feature with buttons to navigate between pages of the table.
 
 Thanks to ChatGPT -3 for helping with the project!!
 
