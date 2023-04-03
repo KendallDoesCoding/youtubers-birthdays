@@ -73,9 +73,8 @@ a:link {
     color: black;
     background-color: transparent;
     text-decoration: none;
-  }
-  font-size: 14px;
-  color: #777;
+    /* font-size: 14px;
+    color: #777; */
 }
 a:link {
   color: black;
