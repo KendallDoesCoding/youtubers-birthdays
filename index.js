@@ -19,6 +19,8 @@ const currentPageCount = document.querySelector(".currentPage");
 const totalPageCount = document.querySelector(".totalPages");
 
 function showPage(page) {
+  //Showing the table data According to Row length and row page 
+
   const startIndex = (page - 1) * rowsPerPage + 1;
   const endIndex = Math.min(startIndex + rowsPerPage - 1, rowsLength);
 
@@ -34,6 +36,8 @@ function showPage(page) {
 }
 
 function updatePaginationDiv() {
+  //update pagination div according to current page and total pages.
+
   leftBtn.disabled = currentPage === 1;
   rightBtn.disabled = currentPage === totalPages;
   // update
