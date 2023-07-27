@@ -138,14 +138,14 @@ form {
   margin-top: 15px; 
   margin-bottom: 10px
 }
-#search-input {
+input {
   padding: 10px; 
   border-radius: 5px;
   border: none; 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
-  width: 30%;
+  /* width: 30%; */
 }
-#search-submit {
+button {
   background-color: #4CAF50; 
   color: white; 
   padding: 10px 20px;
@@ -154,4 +154,3 @@ form {
   margin-left: 10px; 
   cursor: pointer;
 }
-

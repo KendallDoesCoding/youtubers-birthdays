@@ -1,14 +1,16 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const app = express();
 const port = process.env.PORT || 8000;
 let intial_path = require("path").join(__dirname, "public");
 let Youtuber = require("./models/youtuber-model");
 
+// Configure Middlewares
 require("dotenv").config();
-
 app.set("view engine", "ejs");
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(intial_path));
 
 // Connecting the database
@@ -57,6 +59,10 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.get("/addYoutuber",(req,res)=>{
+    res.render("addYoutuber.ejs");
+})
+
 app.post("/add", (req, res) => {
     // Get the data from the request body
     const { category, name, birthday, totalViews, link } = req.body;
@@ -72,10 +78,10 @@ app.post("/add", (req, res) => {
 
     // Save the new YouTuber to the database
     newYoutuber.save().then(()=>{
-        // Redirect back to the home page or show a success message
-        res.redirect("/");
+        // Redirect back to the home page
+        return res.status(200).redirect("/");
     }).catch(err=>{
-        console.error("Error adding YouTuber:", err);
+        console.log("Error adding YouTuber:", err);
         res.status(500).send("Internal Server Error");
     })    
 });

@@ -70,6 +70,7 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | I Spent A Day With ____    | Anthony Padilla      | September 16, 1987            | 925.3 million                     |
 | Kids                       | Like Nastya          | January 27, 2008              | 90 million                        |
 | Kids                       | Vlad and Niki        | January 23, 2013              | 76.8 billion                      |
+| Tech                       | Mrwhosetheboss       | 24 October, 1995              | 3.83 billion                      |
 
 
 Inspiration from Famous Birthdays.
