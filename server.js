@@ -15,7 +15,7 @@ app.use(express.static(intial_path));
 
 // Connecting the database
 const mongoose = require("mongoose");
-const fs=require("fs");
+const fs = require("fs");
 
 mongoose
   .connect(process.env.MONGODB_URI)
@@ -28,21 +28,21 @@ mongoose
 
 // Function to insert data from the JSON file into the database (Will run only at the time of database setup)
 async function insertDataToDB() {
-    try {
-      // Read the JSON file
-      const rawData = fs.readFileSync("./youtubers.json");
-      const data = JSON.parse(rawData);
-  
-      // Insert the data into the database
-      await Youtuber.insertMany(data);
-      console.log("Data inserted successfully into the database!",data);
-    } catch (error) {
-      console.error("Error inserting data:", error);
-    }
+  try {
+    // Read the JSON file
+    const rawData = fs.readFileSync("./youtubers.json");
+    const data = JSON.parse(rawData);
+
+    // Insert the data into the database
+    await Youtuber.insertMany(data);
+    console.log("Data inserted successfully into the database!", data);
+  } catch (error) {
+    console.error("Error inserting data:", error);
   }
-  
+}
+
 // Call the function to insert data into the database
-// Uncomment it at first to insert all the data into database and then remove this call 
+// Uncomment it at first to insert all the data into database and then remove this call
 // and you can delete the function and youtubers.json file afterwards
 // insertDataToDB();
 
@@ -59,14 +59,17 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.get("/addYoutuber",(req,res)=>{
-    res.render("addYoutuber.ejs");
-})
+app.get("/addYoutuber", (req, res) => {
+  res.render("addYoutuber.ejs");
+});
+
 
 app.post("/add", (req, res) => {
-    // Get the data from the request body
-    const { category, name, birthday, totalViews, link } = req.body;
-
+  // Get the data from the request body
+  const { category, name, birthday, totalViews, link } = req.body;
+  if (Youtuber.find({ name: name })) {
+    console.log("Already exists!");
+  } else {
     // Create a new instance of the Youtuber model with the data
     const newYoutuber = new Youtuber({
       category,
@@ -77,13 +80,17 @@ app.post("/add", (req, res) => {
     });
 
     // Save the new YouTuber to the database
-    newYoutuber.save().then(()=>{
+    newYoutuber
+      .save()
+      .then(() => {
         // Redirect back to the home page
         return res.status(200).redirect("/");
-    }).catch(err=>{
+      })
+      .catch((err) => {
         console.log("Error adding YouTuber:", err);
         res.status(500).send("Internal Server Error");
-    })    
+      });
+  }
 });
 
 // Listening on port
