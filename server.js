@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
 const app = express();
 const port = process.env.PORT || 8000;
 let intial_path = require("path").join(__dirname, "public");
@@ -63,6 +62,9 @@ app.get("/addYoutuber", (req, res) => {
   res.render("addYoutuber.ejs");
 });
 
+app.get("/removeYoutuber", (req, res) => {
+  res.render("removeYoutuber.ejs");
+});
 
 app.post("/add", (req, res) => {
   // Get the data from the request body
