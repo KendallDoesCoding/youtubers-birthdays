@@ -49,12 +49,12 @@ async function insertDataToDB() {
 app.get("/", async (req, res) => {
   try {
     const youtubers = await Youtuber.find({}); // Fetch all YouTubers from the database
-    res.render("home", {
+    return res.render("home", {
       youtubers: youtubers, // Pass the fetched data to the EJS view
     });
   } catch (err) {
     console.error("Error fetching YouTubers:", err);
-    res.status(500).send("Internal Server Error");
+    return res.status(500).send("Internal Server Error");
   }
 });
 
@@ -67,31 +67,48 @@ app.get("/removeYoutuber", (req, res) => {
 });
 
 app.post("/add", (req, res) => {
-  // Get the data from the request body
   const { category, name, birthday, totalViews, link } = req.body;
-  if (Youtuber.find({ name: name })) {
-    console.log("Already exists!");
-  } else {
-    // Create a new instance of the Youtuber model with the data
-    const newYoutuber = new Youtuber({
-      category,
-      name,
-      birthday,
-      totalViews,
-      link,
-    });
+  return Youtuber.find({ name: name })
+    .then(() => {
+      return res.status(200).json("Already exists!");
+    })
+    .catch(() => {
+      // Create a new instance of the Youtuber model with the data
+      const newYoutuber = new Youtuber({
+        category,
+        name,
+        birthday,
+        totalViews,
+        link,
+      });
 
-    // Save the new YouTuber to the database
-    newYoutuber
-      .save()
+      // Save the new YouTuber to the database
+      newYoutuber
+        .save()
+        .then(() => {
+          // Redirect back to the home page
+          return res.status(200).redirect("/");
+        })
+        .catch((err) => {
+          console.log("Error adding YouTuber:", err);
+          return res.status(500).send("Internal Server Error");
+        });
+    });
+});
+
+app.post("/remove", (req, res) => {
+  const { key, name } = req.body;
+  console.log(key);
+
+  if (key === process.env.SECRET_KEY) {
+    Youtuber.findOneAndDelete({ name: name })
       .then(() => {
-        // Redirect back to the home page
+        console.log("Deleted!");
         return res.status(200).redirect("/");
       })
-      .catch((err) => {
-        console.log("Error adding YouTuber:", err);
-        res.status(500).send("Internal Server Error");
-      });
+      .catch(() => res.status(400).json("Error!"));
+  } else {
+    console.log("Key don't match!");
   }
 });
 
