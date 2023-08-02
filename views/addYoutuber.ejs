@@ -22,16 +22,24 @@
         <input type="text" name="name" id="name" placeholder="Enter Channel Name (as it is)" required>
 
         <label for="birthday">Birthday</label>
-        <input type="text" name="birthday" id="birthday" placeholder="Birthday of the channel owner Eg: 23 March, 1999" required>
+        <input type="text" name="birthday" id="birthday" placeholder="Birthday of the channel owner Eg: 23 March, 1999"
+            required>
 
         <label for="totalViews">Total Views (approx)</label>
         <input type="text" name="totalViews" id="totalViews" placeholder="Total channel views Eg: 1.5 billion" required>
 
         <label for="link">Link</label>
-        <input type="text" name="link" id="link" placeholder="Add channel link (make sure it is working) Eg:-https://www.youtube.com/@ChannelName" required>
+        <input type="text" name="link" id="link"
+            placeholder="Add channel link (make sure it is working) Eg:-https://www.youtube.com/@ChannelName" required>
 
         <button type="submit">Add YouTuber</button>
     </form>
+    <!-- Add this section to display the error message -->
+    <% if (errorMessage) { %>
+        <p class="error-message">
+            <%= errorMessage %>
+        </p>
+        <% } %>
 </body>
 
 </html>

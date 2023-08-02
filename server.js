@@ -59,56 +59,63 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/addYoutuber", (req, res) => {
-  res.render("addYoutuber.ejs");
+  res.render("addYoutuber.ejs", { errorMessage: "" });
 });
 
 app.get("/removeYoutuber", (req, res) => {
-  res.render("removeYoutuber.ejs");
+  res.render("removeYoutuber.ejs", { errorMessage: "" });
 });
 
 app.post("/add", (req, res) => {
   const { category, name, birthday, totalViews, link } = req.body;
-  return Youtuber.find({ name: name })
-    .then(() => {
-      return res.status(200).json("Already exists!");
-    })
-    .catch(() => {
-      // Create a new instance of the Youtuber model with the data
-      const newYoutuber = new Youtuber({
-        category,
-        name,
-        birthday,
-        totalViews,
-        link,
-      });
-
-      // Save the new YouTuber to the database
-      newYoutuber
-        .save()
-        .then(() => {
-          // Redirect back to the home page
-          return res.status(200).redirect("/");
-        })
-        .catch((err) => {
-          console.log("Error adding YouTuber:", err);
-          return res.status(500).send("Internal Server Error");
+  Youtuber.findOne({ name: name })
+    .then((existingYoutuber) => {
+      if (existingYoutuber) {
+        // If the Youtuber with the same name already exists, show the error
+        const errorMessage = "Youtuber with this name already exists!";
+        return res.render("addYoutuber.ejs", { errorMessage });
+      } else {
+        // Create a new instance of the Youtuber model with the data
+        const newYoutuber = new Youtuber({
+          category,
+          name,
+          birthday,
+          totalViews,
+          link,
         });
+
+        // Save the new YouTuber to the database
+        newYoutuber
+          .save()
+          .then(() => {
+            // Redirect back to the home page
+            return res.status(200).redirect("/");
+          })
+          .catch((err) => {
+            console.log("Error adding YouTuber:", err);
+            return res.status(500).send("Internal Server Error");
+          });
+      }
+    })
+    .catch((err) => {
+      console.log("Error checking for duplicate name:", err);
+      return res.status(500).send("Internal Server Error");
     });
 });
 
 app.post("/remove", (req, res) => {
   const { key, name } = req.body;
-  console.log(key);
 
   if (key === process.env.SECRET_KEY) {
     Youtuber.findOneAndDelete({ name: name })
       .then(() => {
-        console.log("Deleted!");
         return res.status(200).redirect("/");
       })
       .catch(() => res.status(400).json("Error!"));
   } else {
-    console.log("Key don't match!");
+    // If the key doesn't match, set the errorMessage
+    const errorMessage = "Key does not match!";
+    return res.render("removeYoutuber.ejs", { errorMessage });
   }
 });
 

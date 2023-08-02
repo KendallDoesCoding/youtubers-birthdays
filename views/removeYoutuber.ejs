@@ -23,6 +23,12 @@
 
         <button type="submit">Remove YouTuber</button>
     </form>
+    <!-- Add this section to display the error message -->
+    <% if (errorMessage) { %>
+        <p class="error-message">
+            <%= errorMessage %>
+        </p>
+        <% } %>
 </body>
 
 </html>
