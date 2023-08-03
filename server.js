@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 let intial_path = require("path").join(__dirname, "public");
 let Youtuber = require("./models/youtuber-model");
+const bcrypt = require("bcrypt");
 
 // Configure Middlewares
 require("dotenv").config();
@@ -106,17 +107,23 @@ app.post("/add", (req, res) => {
 app.post("/remove", (req, res) => {
   const { key, name } = req.body;
 
-  if (key === process.env.SECRET_KEY) {
-    Youtuber.findOneAndDelete({ name: name })
-      .then(() => {
-        return res.status(200).redirect("/");
-      })
-      .catch(() => res.status(400).json("Error!"));
-  } else {
-    // If the key doesn't match, set the errorMessage
-    const errorMessage = "Key does not match!";
-    return res.render("removeYoutuber.ejs", { errorMessage });
-  }
+  bcrypt
+    .compare(key, process.env.SECRET_KEY)
+    .then((isMatch) => {
+      // If the key matches delete the youtuber
+      if (isMatch) {
+        Youtuber.findOneAndDelete({ name: name })
+          .then(() => {
+            return res.status(200).redirect("/");
+          })
+          .catch(() => res.status(400).json("Error!"));
+      } else {
+        // If the key doesn't match, set the errorMessage
+        const errorMessage = "Key does not match!";
+        return res.render("removeYoutuber.ejs", { errorMessage });
+      }
+    })
+    .catch((err) => console.log("Error comparing key", err));
 });
 
 // Listening on port
