@@ -78,12 +78,8 @@ function filterTable() {
     var cells = rows[i].getElementsByTagName("td");
     var match = false;
     for (var j = 0; j < cells.length; j++) {
-      var query =
-          input.value.trim()
-              .toLowerCase(); // Convert query to lowercase and trim whitespace
-      var cellText =
-          cells[j]
-              .innerHTML.toLowerCase(); // Convert cell contents to lowercase
+      var query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
+      var cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
       if (cellText.indexOf(query) !== -1) {
         // Compare lowercase query with lowercase cell contents
         match = true;
