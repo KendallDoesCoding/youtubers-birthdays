@@ -1,0 +1,45 @@
+<!-- addYoutuber.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://th.bing.com/th/id/R.4f7af48557050fcabfd0e876d7b88015?rik=CcmCOoelSn1ePA&riu=http%3a%2f%2fwww.vectorico.com%2fwp-content%2fuploads%2f2018%2f02%2fyoutube-dark-square.png&ehk=BHlDi%2fDWJt9a%2bTIWKpdUNHqBOJtkdwpvUebEYo3vhRo%3d&risl=&pid=ImgRaw&r=0"
+        type="image/x-icon">
+    <title>YouTubers' Birthdays | Add Youtuber</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form action="/add" method="POST" class="container">
+        <label for="category">Category</label>
+        <input type="text" name="category" id="category"
+            placeholder="Category to which youtuber belong like Gaming, Comedy etc." required>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Channel Name (as it is)" required>
+
+        <label for="birthday">Birthday</label>
+        <input type="date" name="birthday" id="birthday" placeholder="Birthday of the channel owner Eg: 23 March, 1999"
+            required>
+
+        <label for="totalViews">Total Views (approx)</label>
+        <input type="text" name="totalViews" id="totalViews" placeholder="Total channel views Eg: 1.5 billion" required>
+
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link"
+            placeholder="Add channel link (make sure it is working) Eg:-https://www.youtube.com/@ChannelName" required>
+
+        <button type="submit">Add YouTuber</button>
+    </form>
+    <!-- Add this section to display the error message -->
+    <% if (errorMessage) { %>
+        <p class="error-message">
+            <%= errorMessage %>
+        </p>
+        <% } %>
+</body>
+
+</html>

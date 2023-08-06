@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon"
+		href="https://th.bing.com/th/id/R.4f7af48557050fcabfd0e876d7b88015?rik=CcmCOoelSn1ePA&riu=http%3a%2f%2fwww.vectorico.com%2fwp-content%2fuploads%2f2018%2f02%2fyoutube-dark-square.png&ehk=BHlDi%2fDWJt9a%2bTIWKpdUNHqBOJtkdwpvUebEYo3vhRo%3d&risl=&pid=ImgRaw&r=0"
+		type="image/x-icon">
+	<title>YouTubers' Birthdays</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>YouTubers' Birthdays</h1>
+		<p class="totalYtbCount">YouTubers on the list: <span class="count">0</span></p>
+		<form>
+			<input type="text" id="search-input" placeholder="Enter a keyword...">
+			<button onclick="filterTable()" id="search-submit" type="submit">Search</button>
+		</form>
+
+		<table id="table">
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Name</th>
+					<th>Birthday</th>
+					<th>Total Views (approx)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% youtubers.forEach(youtuber=> { %>
+					<tr>
+						<td>
+							<%= youtuber.category %>
+						</td>
+						<td><a href="<%= youtuber.link %>">
+								<%= youtuber.name %>
+							</a></td>
+						<td>
+							<%= youtuber.birthday %>
+						</td>
+						<td>
+							<%= youtuber.totalViews %>
+						</td>
+					</tr>
+					<% }) %>
+			</tbody>
+		</table>
+	</div>
+	<div id="pagination">
+		<button id="left">⬅️</button>
+		<p class="displayCurrentPage">
+			<span class="currentPage">0</span> / <span class="totalPages">0</span>
+		</p>
+		<button id="right">➡️</button>
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>
