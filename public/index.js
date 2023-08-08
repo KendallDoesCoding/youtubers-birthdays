@@ -19,7 +19,7 @@ const currentPageCount = document.querySelector(".currentPage");
 const totalPageCount = document.querySelector(".totalPages");
 
 function showPage(page) {
-  //Showing the table data According to Row length and row page 
+  // Showing the table data According to Row length and row page
 
   const startIndex = (page - 1) * rowsPerPage + 1;
   const endIndex = Math.min(startIndex + rowsPerPage - 1, rowsLength);
@@ -36,7 +36,7 @@ function showPage(page) {
 }
 
 function updatePaginationDiv() {
-  //update pagination div according to current page and total pages.
+  // update pagination div according to current page and total pages.
 
   leftBtn.disabled = currentPage === 1;
   rightBtn.disabled = currentPage === totalPages;
@@ -63,7 +63,7 @@ rightBtn.addEventListener("click", () => {
 // Display Total Youtuber count in table
 count.textContent = `${rowsLength}`;
 
-//This is the code for the search bar
+// This is the code for the search bar
 
 function filterTable() {
   // Get the search input and table elements
@@ -78,8 +78,12 @@ function filterTable() {
     var cells = rows[i].getElementsByTagName("td");
     var match = false;
     for (var j = 0; j < cells.length; j++) {
-      var query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
-      var cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
+      var query =
+          input.value.trim()
+              .toLowerCase(); // Convert query to lowercase and trim whitespace
+      var cellText =
+          cells[j]
+              .innerHTML.toLowerCase(); // Convert cell contents to lowercase
       if (cellText.indexOf(query) !== -1) {
         // Compare lowercase query with lowercase cell contents
         match = true;
