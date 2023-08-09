@@ -26,26 +26,6 @@ mongoose
     console.error("Error connecting to MongoDB:", err);
   });
 
-// Function to insert data from the JSON file into the database (Will run only at the time of database setup)
-async function insertDataToDB() {
-  try {
-    // Read the JSON file
-    const rawData = fs.readFileSync("./youtubers.json");
-    const data = JSON.parse(rawData);
-
-    // Insert the data into the database
-    await Youtuber.insertMany(data);
-    console.log("Data inserted successfully into the database!", data);
-  } catch (error) {
-    console.error("Error inserting data:", error);
-  }
-}
-
-// Call the function to insert data into the database
-// Uncomment it at first to insert all the data into database and then remove this call
-// and you can delete the function and youtubers.json file afterwards
-// insertDataToDB();
-
 // Routes
 app.get("/", async (req, res) => {
   try {
