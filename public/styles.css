@@ -7,6 +7,15 @@ h1 {
   color: #333;
   text-align: center;
   margin-top: 50px;
+  margin-left: 10px;
+}
+.main{
+  display: flex;
+}
+.youtube{
+  width: 80px;
+  margin-left: 20%;
+  margin-top: 25px;
 }
 .container {
   display: grid;
