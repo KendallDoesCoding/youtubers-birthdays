@@ -8,7 +8,7 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 
 | **Category**             | **Name**               | **Birthday**       | **Total Views as of Jan 2023 (approx)** |
 |--------------------------|------------------------|--------------------|----------------------------------------|
-| Gaming                   | MrBeast Gaming         | 7 May, 1998        | 6.04 billion                           |
+| Gaming                   | MrBeast Gaming         | 7 May, 1998       | 6.04 billion                           |
 | Gaming                   | PewDiePie              | 24 October 1989   | 29.02 billion                          |
 | Gaming                   | Markiplier             | 28 June, 1989     | 20.18 billion                          |
 | Gaming                   | DanTDM                 | 8 November 1991   | 19.35 billion                          |
@@ -24,7 +24,7 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | Gaming                   | Digusised Toast        | 25 November 1991  | 1.25 billion                           |
 | Gaming                   | Macie Jay              | 5 November 1990   | 374 million                            |
 | Gaming                   | IShowSpeed             | 21 January 2005   | 1.65 billion                           |
-| The YouTube Philanthropist | MrBeast               | 7 May 1998        | 27.6 billion                           |
+| The YouTube Philanthropist | MrBeast              | 7 May 1998        | 27.6 billion                           |
 | Vlogs/Challenge Videos   | FaZe Rug               | 26 May 2000       | 16.129 million                         |
 | Tech                     | MKBHD                  | 3 December 1993   | 3.57 billion                           |
 | Tech                     | Linus Tech Tips        | 20 August 1976    | 7.1 billion                            |
@@ -38,6 +38,7 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | Tech                     | Techno Ruhez           | 8 January 1990    | 747.5 million                          |
 | Tech                     | Geekyranjit            | 24 May 1977       | 819 million                            |
 | Tech                     | Michael Reeves         | 20 November 1997  | 389 million                            |
+| Tech                     | Mrwhosetheboss         | 24 October 1995   | 3.99 billion                           |
 | Music                    | RoomieOfficial         | 8 April 1988      | 1.5 billion                            |
 | Music                    | Davie504               | 5 April 1994      | 2.4 billion                            |
 | Music                    | KSI                    | 19 June 1993      | 2.66 billion                           |
@@ -72,9 +73,9 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | I Spent A Day With ____ | Anthony Padilla        | 16 September 1987 | 925.3 million                          |
 | Kids                    | Like Nastya            | 27 January 2008   | 90 million                             |
 | Kids                    | Vlad and Niki          | 23 January 2013   | 76.8 billion                           |
-| Kids                    | Bryton Myler           | 27 February 2004 | 2.8 million                            |
+| Kids                    | Bryton Myler           | 27 February 2004  | 2.8 million                            |
 | Kids                    | Ashton                 | 30 January 2006   | 2.57 million                           |
-| Kids                    | Paxton Myler           | 6 September 2008 | 2.45 million                           |
-| Kids                    | Peyton Delu            | 6 September 2008 | 4.17 million                           |
+| Kids                    | Paxton Myler           | 6 September 2008  | 2.45 million                           |
+| Kids                    | Peyton Delu            | 6 September 2008  | 4.17 million                           |
 
 Inspiration from Famous Birthdays.
