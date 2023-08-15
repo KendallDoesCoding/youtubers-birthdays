@@ -5,6 +5,7 @@ const port = process.env.PORT || 8000;
 let intial_path = require("path").join(__dirname, "public");
 let Youtuber = require("./models/youtuber-model");
 const bcrypt = require("bcrypt");
+const getViews=require("./updateView");
 
 // Configure Middlewares
 require("dotenv").config();
@@ -45,6 +46,11 @@ app.get("/addYoutuber", (req, res) => {
 
 app.get("/removeYoutuber", (req, res) => {
   res.render("removeYoutuber.ejs", { errorMessage: "" });
+});
+
+app.get("/updateViews",()=>{
+  const apiKey = process.env.API_KEY;
+  getViews(apiKey);
 });
 
 app.post("/add", (req, res) => {
