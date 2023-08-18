@@ -49,7 +49,9 @@ app.get("/removeYoutuber", (req, res) => {
 });
 
 app.get("/updateViews", () => {
-  getViews();
+  getViews()
+    .then((res) => res.json("Updated views!"))
+    .catch((err) => res.json(`Error Updating ${err}`));
 });
 
 app.post("/add", (req, res) => {
