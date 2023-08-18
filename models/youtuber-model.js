@@ -3,7 +3,7 @@ const mongoose=require("mongoose");
 const youtuberSchema = new mongoose.Schema({
     category: String,
     name: String,
-    birthday: String,
+    birthday: Date,
     totalViews: String,
     link: String,
   });
