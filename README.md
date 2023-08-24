@@ -6,7 +6,7 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 
 # YouTubers' Birthdays
 
-| Sr. No | **Category**               | **Name**             | **Birthday**      | **Total Views as of Jan 2023 (approx)** |
+| **Sr. No** | **Category**               | **Name**             | **Birthday**      | **Total Views as of Jan 2023 (approx)** |
 |--------|----------------------------|----------------------|-------------------|-----------------------------------------|
 | 1      | Gaming                     | MrBeast Gaming       | 7 May, 1998       | 6.04 billion                            |
 | 2      | Gaming                     | PewDiePie            | 24 October 1989   | 29.02 billion                           |
@@ -77,4 +77,6 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | 67     | Kids                       | Ashton               | 30 January 2006   | 2.57 million                            |
 | 68     | Kids                       | Paxton Myler         | 6 September 2008  | 2.45 million                            |
 | 69     | Kids                       | Peyton Delu          | 6 September 2008  | 4.17 million                            |
+
+
 Inspiration from Famous Birthdays.
