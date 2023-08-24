@@ -23,8 +23,17 @@ To add a YouTuber, you would need to follow two steps:-
    - <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/addYoutuber_elcoaz.png" alt="add youtuber" />
 
 2. - Now, after adding the youtuber's info on the website, you have to update the README (Important as only it will mark as an original contribution on GitHub)
-   - For this fork the repo and update README to add youtuber info
-   - <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/README_jrxz1a.png" alt="README.md" />
+   - For this fork the repo and update README to add youtuber info.
+   - You can add the YouTuber to the README by 2 methods:
+      - **Editing in GitHub website or IDE**
+          - <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/README_jrxz1a.png" alt="README.md" />
+          - Commit and Create a PR
+     - **Tables Generator Website**
+         - Copy and paste the table from README into [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables#).
+         - Edit the table on the website
+         - Tap generate
+         - Paste the generated table back into the README.md
+         - Commit and Create a PR.   
 
 With these two steps, you have successfully added a YouTube channel, and you can create a pull request which marks your contribution to our project.
 (Note: Your PR may not be merged if the information is found incorrect or it doesn't abide by the project code of conduct)
