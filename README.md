@@ -1,4 +1,4 @@
-This project includes code for a website with a table with information about YouTube channels and their statistics. The table four columns: Channel Name, Date Created, Subscribers, and Views. Each row represents a different channel and its corresponding statistics. The code also includes a pagination feature with buttons to navigate between pages of the table.
+This project includes code for a website with a table with information about YouTube channels and their statistics. The table four columns: Channel Name, Date Created, Subscribers, and Views. Each row represents a different channel and its corresponding statistics. The code also includes a pagination feature with buttons to navigate between pages of the table. The views of every channel update every 24 hours using the YouTube API.
 
 Thanks to ChatGPT (by OpenAI) for helping with the project!!
 
