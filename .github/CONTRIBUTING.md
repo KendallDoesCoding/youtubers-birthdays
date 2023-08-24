@@ -20,10 +20,11 @@ To add a YouTuber, you would need to follow two steps:-
 
 1. - Go to the [add YouTuber page](http://youtubers-birthdays.kendalldoescoding.tech/addYouTuber) on the website.
    - Here, fill in all the details of the Youtuber:- Category, Channel Name, Birthday, Total Channel Views, and Channel Link and click on add button.
-   - <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/addYoutuber_elcoaz.png" alt="add youtuber" />
+     <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/addYoutuber_elcoaz.png" alt="add youtuber" />
 
 2. - Now, after adding the youtuber's info on the website, you have to update the README (Important as only it will mark as an original contribution on GitHub)
-   - For this fork the repo and update README to add youtuber info
+   - For this fork the repo and update README to add youtuber info.
+   - **Note: even if on the website the newly added youtuber shows at the last, if the catergory was already added before (eg. Gaming) add the newly added YouTuber  add the end of that catergory and not at the end of the table.**
    - <img src="https://res.cloudinary.com/dwuyp1nss/image/upload/v1690489952/Website%20Demo/README_jrxz1a.png" alt="README.md" />
 
 With these two steps, you have successfully added a YouTube channel, and you can create a pull request which marks your contribution to our project.
