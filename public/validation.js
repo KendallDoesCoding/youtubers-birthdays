@@ -72,12 +72,13 @@ const validation = (e) => {
   //validation code for birthday
 
   birthday.trim();
+  // function for getting age in years
   function GetAge() {
-    let dob = new Date(birthday);
-    let month_diff = Date.now() - dob.getTime();
-    let age_dt = new Date(month_diff);
-    let year = age_dt.getUTCFullYear();
-    let age = Math.abs(year - 1970);
+    const dob = new Date(birthday);
+    const month_diff = Date.now() - dob.getTime();
+    const age_dt = new Date(month_diff);
+    const year = age_dt.getUTCFullYear();
+    const age = Math.abs(year - 1970);
     return age;
   }
   if (birthday.length < 1) {
@@ -100,11 +101,11 @@ const validation = (e) => {
     if (totalViews.length < 6) {
       totalViewserror.innerText = "Minimum have 100k Subscriber";
     } else {
-      let sliceto100k = totalViews.slice(0, 6);
+      const sliceto100k = totalViews.slice(0, 6);
       if (isNaN(sliceto100k)) {
         totalViewserror.innerText = "Not a valid view's";
       } else {
-        if (+sliceto100k < 100000) {
+        if (Number(sliceto100k) < 100000) {
           totalViewserror.innerText = "Not have Enough subscriber";
         } else {
           totalViewserror.innerText = "";
@@ -114,17 +115,17 @@ const validation = (e) => {
   }
 
   //validation code for youtublink
-  let urlregex =
-    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#&//=]*)/g;
-  youtublink.trim();
+  const urlregex = /^https:\/\/www\.youtube\.com\/watch$/i;
 
+  youtublink.trim();
   if (youtublink.length < 1) {
     youtublinkerror.innerText = "Link Can't be empty";
   } else {
-    let validateLink = youtublink.match(urlregex);
+    const inputlinkslice = youtublink.slice(0, 29);
+    const validateLink = urlregex.test(inputlinkslice);
     if (validateLink) {
-      let accepted =
-        validateLink[0].slice(0, 29) === "https://www.youtube.com/watch";
+      // second check for link
+      const accepted = inputlinkslice === "https://www.youtube.com/watch";
       if (accepted && validateLink) {
         youtublinkerror.innerText = "";
       } else {

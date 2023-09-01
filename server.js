@@ -55,7 +55,6 @@ app.get("/updateViews", () => {
 });
 
 app.post("/add", (req, res) => {
-  console.log(req.body);
   const { category, name, birthday, totalViews, link } = req.body;
   Youtuber.findOne({ name: name })
     .then((existingYoutuber) => {
