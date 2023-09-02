@@ -78,6 +78,6 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | 68        | Kids                       | Ashton               | 30 January 2006   | 2.57 million                            |
 | 69        | Kids                       | Paxton Myler         | 6 September 2008  | 2.45 million                            |
 | 70        | Kids                       | Peyton Delu          | 6 September 2008  | 4.17 million                            |
-
+| 71        | Science                    | Vsauce               | 23 January 1986   | 3.08 billion                            |
 
 Inspiration from Famous Birthdays.
