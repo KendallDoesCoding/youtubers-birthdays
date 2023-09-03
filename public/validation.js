@@ -4,7 +4,7 @@
 const categoryList = [
   "Film and Animation",
   "Autos and Vehicles",
-  " Music",
+  "Music",
   "Pets & Animals",
   "Sports",
   "Travel and Events",
@@ -17,6 +17,7 @@ const categoryList = [
   "Science and Technology",
   "How-to and Style",
   "Nonprofits and Activism",
+  "Other's",
 ];
 
 // selecting the select option in our add youtuber.ejs file
@@ -115,18 +116,18 @@ const validation = (e) => {
   }
 
   //validation code for youtublink
-  const urlregex = /^https:\/\/www\.youtube\.com\/watch$/i;
+
+  // url regex for checking the link
+  const urlregex =
+    /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?@v=|embed\/|v\/)?)([\w\-@]+)(\S+)?$/g;
 
   youtublink.trim();
   if (youtublink.length < 1) {
     youtublinkerror.innerText = "Link Can't be empty";
   } else {
-    const inputlinkslice = youtublink.slice(0, 29);
-    const validateLink = urlregex.test(inputlinkslice);
+    const validateLink = urlregex.test(youtublink);
     if (validateLink) {
-      // second check for link
-      const accepted = inputlinkslice === "https://www.youtube.com/watch";
-      if (accepted && validateLink) {
+      if (validateLink) {
         youtublinkerror.innerText = "";
       } else {
         youtublinkerror.innerText = "Please Provide Valid Link";
