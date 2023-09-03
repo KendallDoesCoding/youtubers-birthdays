@@ -17,7 +17,7 @@ const categoryList = [
   "Science and Technology",
   "How-to and Style",
   "Nonprofits and Activism",
-  "Other's",
+  "Others",
 ];
 
 // selecting the select option in our add youtuber.ejs file
@@ -63,33 +63,21 @@ const validation = (e) => {
   if (youtubername.length < 1) {
     youtubernameerror.innerText = "Name Can't be empty";
   } else {
-    if (youtubername.length < 4) {
-      youtubernameerror.innerText = "Name must have 4 charecter's";
+    if (youtubername.length < 3) {
+      youtubernameerror.innerText = "Name must have 3 charecter's";
     } else {
       youtubernameerror.innerText = "";
     }
   }
 
+
   //validation code for birthday
 
   birthday.trim();
-  // function for getting age in years
-  function GetAge() {
-    const dob = new Date(birthday);
-    const month_diff = Date.now() - dob.getTime();
-    const age_dt = new Date(month_diff);
-    const year = age_dt.getUTCFullYear();
-    const age = Math.abs(year - 1970);
-    return age;
-  }
   if (birthday.length < 1) {
     birthdayerror.innerText = "Birthday Can't be empty";
   } else {
-    if (GetAge() < 5) {
-      birthdayerror.innerText = "Age can't be Less then 5 ";
-    } else {
-      birthdayerror.innerText = "";
-    }
+      birthdayerror.innerText = "";  
   }
 
   //validation code for total views
@@ -100,20 +88,21 @@ const validation = (e) => {
     totalViewserror.innerText = "Totalviews Can't be empty";
   } else {
     if (totalViews.length < 6) {
-      totalViewserror.innerText = "Minimum have 100k Subscriber";
+      totalViewserror.innerText = "More than 100k views required";
     } else {
       const sliceto100k = totalViews.slice(0, 6);
       if (isNaN(sliceto100k)) {
-        totalViewserror.innerText = "Not a valid view's";
+        totalViewserror.innerText = "Not a valid views";
       } else {
         if (Number(sliceto100k) < 100000) {
-          totalViewserror.innerText = "Not have Enough subscriber";
+          totalViewserror.innerText = "More than 100k views required";
         } else {
           totalViewserror.innerText = "";
         }
       }
     }
   }
+
 
   //validation code for youtublink
 
