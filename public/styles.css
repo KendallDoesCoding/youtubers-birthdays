@@ -172,6 +172,12 @@ button {
   color: #d40606;
 }
 
+.box{
+  border-color: #d40606;
+  border-width: 3px;
+}
+
+
 #searchbutton{
   color: #ffffff;
   animation:  infinite;
