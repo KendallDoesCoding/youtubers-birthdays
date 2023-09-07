@@ -2,7 +2,7 @@ This project includes code for a website with a table with information about You
 
 Thanks to ChatGPT (by OpenAI) for helping with the project!!
 
-**NOTE**: Any contribution made, must abide in the projects [Contributing Guidelines](.github/CONTRIBUTING.md). Please review the [Contributing Guidelines](.github/CONTRIBUTING.md) to learn how to add a YouTuber to the list. 
+# **NOTE**: Any contribution made, must abide in the projects [Contributing Guidelines](.github/CONTRIBUTING.md). Please review the [Contributing Guidelines](.github/CONTRIBUTING.md) to learn how to add a YouTuber to the list. 
 
 # YouTubers' Birthdays
 
