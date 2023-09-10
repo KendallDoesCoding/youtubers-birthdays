@@ -2,23 +2,34 @@
 
 // category list of all youtube category
 const categoryList = [
-  "Film and Animation",
   "Autos and Vehicles",
-  "Music",
-  "Pets & Animals",
-  "Sports",
-  "Travel and Events",
-  "Gaming",
-  "People and Blogs",
   "Comedy",
-  "Entertainment",
-  "News and Politics",
+  "Comedy/Animation",
   "Education",
-  "Science and Technology",
+  "Entertainment",
+  "Film and Animation",
+  "Finance",
+  "Gaming",
   "How-to and Style",
+  "Kids",
+  "Music",
+  "News and Politics",
   "Nonprofits and Activism",
+  "People and Blogs",
+  "Pets & Animals",
+  "Pranks",
+  "Scam-baiting",
+  "Science and Technology",
+  "Self-Help",
+  "Sports",
+  "Tech",
+  "Travel and Events",
+  "Travelling Vlogs",
+  "Variety",
+  "vlogs",
   "Others",
 ];
+
 
 // selecting the select option in our add youtuber.ejs file
 const selectOptin = document.querySelector("#category");
