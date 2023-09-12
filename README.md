@@ -81,5 +81,6 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | 71        | Science                    | Vsauce               | 23 January 1986   | 3.08 billion                            |
 | 72        | Education                  | Aman Dhattarwal      | 4 March 1997      | 379.9 million                           |
 | 73        | Vlogs                      | Flying Beast         | 9 July 1986       | 3.7 billion                             |
-| 74        | Gaming                     | CarryisLive          | 12 June 1999      | 1.5 billion                             |
+| 75        | Gaming                     | CarryisLive          | 12 June 1999      | 1.5 billion                             |
+
 Inspiration from Famous Birthdays.
