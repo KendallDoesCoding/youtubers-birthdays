@@ -2,14 +2,13 @@
 
 // category list of all youtube category
 const categoryList = [
-  "Autos and Vehicles",
+  "Gaming",
   "Comedy",
   "Comedy/Animation",
   "Education",
   "Entertainment",
   "Film and Animation",
   "Finance",
-  "Gaming",
   "How-to and Style",
   "Kids",
   "Music",
@@ -23,10 +22,11 @@ const categoryList = [
   "Self-Help",
   "Sports",
   "Tech",
+  "Autos and Vehicles",
   "Travel and Events",
   "Travelling Vlogs",
   "Variety",
-  "vlogs",
+  "Vlogs",
   "Others",
 ];
 
