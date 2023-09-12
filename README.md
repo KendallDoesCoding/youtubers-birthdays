@@ -83,6 +83,6 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | 73        | Vlogs                      | Flying Beast         | 9 July 1986       | 3.7 billion                             |
 | 74        | Podcasting                 | BeerBiceps           | 6 February 1993  | 856.7 million                            |
 | 75        | Gaming                     | CarryisLive          | 12 June 1999      | 1.5 billion                             |
-
+| 76        | Gaming                     | MortaL               | 22 May 1996       | 1.3 billion                             |                
 
 Inspiration from Famous Birthdays.
