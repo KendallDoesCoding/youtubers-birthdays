@@ -19,7 +19,7 @@ const currentPageCount = document.querySelector(".currentPage");
 const totalPageCount = document.querySelector(".totalPages");
 
 function showPage(page) {
-  //Showing the table data According to Row length and row page 
+  //Showing the table data According to Row length and row page
 
   const startIndex = (page - 1) * rowsPerPage + 1;
   const endIndex = Math.min(startIndex + rowsPerPage - 1, rowsLength);
