@@ -79,5 +79,10 @@ Thanks to ChatGPT (by OpenAI) for helping with the project!!
 | 69        | Kids                       | Paxton Myler         | 6 September 2008  | 2.45 million                            |
 | 70        | Kids                       | Peyton Delu          | 6 September 2008  | 4.17 million                            |
 | 71        | Science                    | Vsauce               | 23 January 1986   | 3.08 billion                            |
+| 72        | Education                  | Aman Dhattarwal      | 4 March 1997      | 379.9 million                           |
+| 73        | Vlogs                      | Flying Beast         | 9 July 1986       | 3.7 billion                             |
+| 74        | Podcasting                 | BeerBiceps           | 6 February 1993  | 856.7 million                            |
+| 75        | Gaming                     | CarryisLive          | 12 June 1999      | 1.5 billion                             |
+| 76        | Gaming                     | MortaL               | 22 May 1996       | 1.3 billion                             |                
 
 Inspiration from Famous Birthdays.
