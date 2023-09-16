@@ -33,6 +33,20 @@ h1 {
   min-height: 40vh;
 }
 
+.search_and_buttonsection{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn{
+  padding: 10px 20px;
+}
+
+.btn #addyoutuber{
+  color: white;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

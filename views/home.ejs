@@ -20,10 +20,17 @@
 			<h1>YouTubers' Birthdays</h1>
 		</div>
 		<p class="totalYtbCount">YouTubers on the list: <span class="count">0</span></p>
-		<form>
-			<input type="text" id="search-input" placeholder="Enter a keyword...">
-			<button onclick="filterTable()" id="search-submit" type="submit">Search</button>
-		</form>
+		<div class="search_and_buttonsection">
+			<form>
+				<input type="text" id="search-input" placeholder="Enter a keyword...">
+				<button onclick="filterTable()" id="search-submit" type="submit">Search</button>
+			</form>
+			<button class="btn">
+			<a id="addyoutuber" href="/addYoutuber">
+				Add Youtuber
+			</a>	
+			</button>
+		</div>
 
 		<table id="table">
 			<thead>
