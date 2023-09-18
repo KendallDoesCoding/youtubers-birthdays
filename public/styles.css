@@ -9,10 +9,10 @@ h1 {
   margin-top: 50px;
   margin-left: 10px;
 }
-.main{
+.main {
   display: flex;
 }
-.youtube{
+.youtube {
   width: 80px;
   margin-left: 20%;
   margin-top: 25px;
@@ -29,7 +29,7 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
-.container.remove{
+.container.remove {
   min-height: 40vh;
 }
 
@@ -75,33 +75,32 @@ td:first-child {
   font-weight: bold;
 }
 td:last-child {
-
-    font-size: 14px;
-    color: #777;
+  font-size: 14px;
+  color: #777;
 }
 a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:active {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-    /* font-size: 14px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  /* font-size: 14px;
     color: #777; */
 }
 a:link {
@@ -162,27 +161,40 @@ a:active {
 /* Search form */
 form {
   display: flex;
-  align-items: center; 
-  margin-top: 15px; 
-  margin-bottom: 10px
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 input {
-  padding: 10px; 
+  padding: 10px;
   border-radius: 5px;
-  border: none; 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   /* width: 30%; */
 }
-button {
-  background-color: #4CAF50; 
-  color: white; 
-  padding: 10px 20px;
-  border-radius: 5px; 
+
+select {
+  padding: 10px;
+  border-radius: 5px;
   border: none;
-  margin-left: 10px; 
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
   cursor: pointer;
 }
-.error-message{
+
+.disableButton {
+  background-color: #9ae09c;
+}
+
+.error-message {
   text-align: center;
   color: #d40606;
 }
