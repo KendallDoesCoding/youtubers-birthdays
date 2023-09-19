@@ -39,12 +39,13 @@ h1 {
   justify-content: space-between;
 }
 
-.btn{
+#addyoutuber{
   padding: 10px 20px;
-}
-
-.btn #addyoutuber{
+  background-color: #4caf50;
   color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
 table {
