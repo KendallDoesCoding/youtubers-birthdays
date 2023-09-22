@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <form action="/remove" method="POST" class="container remove">
+    <div class="container">
+    <form action="/remove" method="POST" class="remove">
         <label for="link">Enter Secret Key</label>
         <input type="text" name="key" id="secret" required>
 
@@ -23,6 +24,7 @@
 
         <button type="submit">Remove YouTuber</button>
     </form>
+    </div>
     <!-- Add this section to display the error message -->
     <% if (errorMessage) { %>
         <p class="error-message">
