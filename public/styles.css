@@ -36,6 +36,19 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
+.container-add-remove {
+  display: grid;
+  align-items: center;
+  min-height: 10vh;
+  min-width: fit-content;
+  max-width: 800px;
+  margin: 1% auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
 .remove{
   display: grid;
   align-items: center;
