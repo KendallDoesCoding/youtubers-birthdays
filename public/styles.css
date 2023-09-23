@@ -1,21 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #f7f7f7;
+  margin: 0;
 }
 h1 {
   font-size: 36px;
   color: #333;
   text-align: center;
-  margin-top: 50px;
   margin-left: 10px;
 }
-.main {
+.main{
   display: flex;
+  box-shadow: 2px 2px 2px black;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
 }
-.youtube {
+.youtube{
   width: 80px;
   margin-left: 20%;
-  margin-top: 25px;
+
 }
 .container {
   display: grid;
@@ -23,85 +30,101 @@ h1 {
   min-height: 70vh;
   min-width: fit-content;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1% auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
 }
-.container.remove {
-  min-height: 40vh;
-}
-
-.search_and_buttonsection{
-  display: flex;
+.container-add-remove {
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-}
-
-#addyoutuber{
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  min-height: 10vh;
+  min-width: fit-content;
+  max-width: 800px;
+  margin: 1% auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  border: none;
-  cursor: pointer;
 }
 
-table {
+.remove{
+  display: grid;
+  align-items: center;
+  min-height: 30vh;
+  width: 50%;
+  margin: 1% auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-  font-size: 16px;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.129);
+  overflow: hidden;
 }
-th,
-td {
+
+#table th,
+#table td {
   padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
+  text-align: left;
+  background-color: #fff;
 }
+
+
 th {
   background-color: #f2f2f2;
-  color: #555;
+  color: black;
   text-transform: uppercase;
 }
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+
+
+#table tr:nth-child(odd) td {
+  background-color: #007bff14;
 }
+
+#table tr:nth-child(even) td {
+  background-color: #fff;
+}
+
 tr:hover {
   background-color: #e6e6e6;
 }
-td:first-child {
-  font-weight: bold;
+
+
+#table th {
+  border: 2px solid #9dcbff;
 }
-td:last-child {
-  font-size: 14px;
-  color: #777;
+#table td {
+  border: 0.5px solid #9dcbff;
 }
+
 a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: blue;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:active {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  /* font-size: 14px;
-    color: #777; */
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
 }
 a:link {
   color: black;
@@ -148,7 +171,15 @@ a:active {
 
 /* Youtuber count */
 .totalYtbCount {
-  margin: 0 auto;
+  text-align: center;
+  background-color: red ;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 1% 10% 1% auto ;
+  border-radius: 0.7em;
+  color: white;
+  height: max-content;
+  padding: 15px 10px;
+
 }
 .count {
   font-weight: bold;
@@ -161,40 +192,71 @@ a:active {
 /* Search form */
 form {
   display: flex;
-  align-items: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  align-items: center; 
+  margin-top: 15px; 
+  margin-bottom: 10px
 }
 input {
-  padding: 10px;
+  padding: 10px; 
+  width: auto;
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  /* width: 30%; */
+  border: none; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
 }
 
-select {
-  padding: 10px;
+input:focus { 
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
-}
+  border: none; 
+  box-shadow: 0 0 5px #007BFF;
 
+}
 button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #007BFF;
+  color: white; 
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 5px; 
   border: none;
-  margin-left: 10px;
   cursor: pointer;
 }
-
-.disableButton {
-  background-color: #9ae09c;
+#search-submit{
+  margin-left: 10px ;
+}
+#search-submit:hover{
+  box-shadow: 0 0 5px #007BFF;
 }
 
-.error-message {
+.error-message{
   text-align: center;
   color: #d40606;
+}
+
+
+#addyoutuber {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: max-content;
+}
+.search_and_buttonsection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_and_buttonsection button {
+  width: auto; /* Adjust the width as needed */
+}
+
+.addYoutubercontainer{
+  display: grid;
+  align-items: center;
+  min-height: 70vh;
+  width: 50%;
+  margin: 1% auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
 }
