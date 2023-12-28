@@ -260,3 +260,31 @@ button {
   background-color: #fff;
   border-radius: 5px;
 }
+
+.arrow-container {
+  display: inline;
+  position: relative;
+}
+
+.arrow {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 2px 5px;
+  position: absolute;
+}
+
+th:hover .arrow {
+  visibility: visible;
+}
+
+.up {
+  border-bottom: 5px solid black;
+}
+
+.down {
+  border-top: 5px solid black;
+  margin-top: 10px
+}

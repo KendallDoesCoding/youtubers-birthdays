@@ -38,10 +38,27 @@
 		<table id="table">
 			<thead>
 				<tr>
-					<th>Category</th>
+					<th onclick="sortTableAndToggleArrow('category')" data-direction="desc">
+						Category
+						<span id="category-arrow">
+							<span class="arrow-container">
+								<span class="arrow up"></span>
+								<span class="arrow down"></span>
+							</span>
+						</span>
+		
+					</th>
 					<th>Name</th>
 					<th>Birthday</th>
-					<th>Total Views (approx)</th>
+					<th onclick="sortTableAndToggleArrow('totalViews')" data-direction="desc">
+						Total Views (approx)
+						<span id="totalViews-arrow">
+							<span class="arrow-container">
+								<span class="arrow up"></span>
+								<span class="arrow down"></span>
+							</span>
+						</span>
+					</th>
 				</tr>
 			</thead>
 			<tbody>

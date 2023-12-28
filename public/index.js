@@ -94,5 +94,77 @@ function filterTable() {
   }
 }
 
+function sortTableAndToggleArrow(columnName) {
+  var arrowElement = document.getElementById(columnName + "-arrow");
+  var currentDirection = arrowElement.getAttribute("data-direction") || "desc";
+
+  // Toggle arrow direction
+  currentDirection = currentDirection === "asc" ? "desc" : "asc";
+
+  // Set arrow visualization based on direction
+  arrowElement.innerHTML = '<span class="arrow ' + (currentDirection === "desc" ? "up" : "down") + '"></span>';
+  arrowElement.setAttribute("data-direction", currentDirection);
+
+  // Sort the table
+  sortTable(columnName, currentDirection);
+}
+
+function sortTable(columnName, direction) {
+  var table = document.getElementById("table");
+  var tbody = table.tBodies[0];
+  var rows = Array.from(tbody.getElementsByTagName("tr"));
+  var columnIndex = getColumnIndex(columnName); // Get the index of the clicked column
+  // Sorting logic
+  rows.sort(function (a, b) {
+    var x = a.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
+    var y = b.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
+
+    if (columnName == "totalViews") {
+      x = convertViewsStringToNumber(x);
+      y = convertViewsStringToNumber(y);
+    }
+
+    if (direction === "asc") {
+      return x > y ? 1 : -1;
+    } else {
+      return x < y ? 1 : -1;
+    }
+  });
+
+  // Reorder the rows in the table
+  for (var i = 0; i < rows.length; i++) {
+    tbody.appendChild(rows[i]);
+  }
+}
+
+function getColumnIndex(columnName) {
+  if (columnName == 'category')
+    return 0;
+  else if (columnName == 'totalViews')
+    return 3;
+}
+
+
+const convertViewsStringToNumber = (formattedCount) => {
+  const match = formattedCount.match(/([\d.]+)\s*(billion|million)?/i);
+
+  if (!match) {
+    // Invalid format, return as is
+    return parseFloat(formattedCount);
+  }
+
+  const numericValue = parseFloat(match[1]);
+  const unit = (match[2] || "").toLowerCase(); // Use an empty string if unit is undefined
+
+  switch (unit) {
+    case "billion":
+      return numericValue * 1000000000;
+    case "million":
+      return numericValue * 1000000;
+    default:
+      return numericValue;
+  }
+};
+
 var input = document.getElementById("search-input");
 input.addEventListener("input", filterTable);
