@@ -19,7 +19,7 @@ const currentPageCount = document.querySelector(".currentPage");
 const totalPageCount = document.querySelector(".totalPages");
 
 function showPage(page) {
-  //Showing the table data According to Row length and row page
+  // Showing the table data According to Row length and row page
 
   const startIndex = (page - 1) * rowsPerPage + 1;
   const endIndex = Math.min(startIndex + rowsPerPage - 1, rowsLength);
@@ -36,7 +36,7 @@ function showPage(page) {
 }
 
 function updatePaginationDiv() {
-  //update pagination div according to current page and total pages.
+  // update pagination div according to current page and total pages.
 
   leftBtn.disabled = currentPage === 1;
   rightBtn.disabled = currentPage === totalPages;
@@ -63,7 +63,7 @@ rightBtn.addEventListener("click", () => {
 // Display Total Youtuber count in table
 count.textContent = `${rowsLength}`;
 
-//This is the code for the search bar
+// This is the code for the search bar
 
 function filterTable() {
   // Get the search input and table elements
@@ -78,8 +78,12 @@ function filterTable() {
     var cells = rows[i].getElementsByTagName("td");
     var match = false;
     for (var j = 0; j < cells.length; j++) {
-      var query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
-      var cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
+      var query =
+          input.value.trim()
+              .toLowerCase(); // Convert query to lowercase and trim whitespace
+      var cellText =
+          cells[j]
+              .innerHTML.toLowerCase(); // Convert cell contents to lowercase
       if (cellText.indexOf(query) !== -1) {
         // Compare lowercase query with lowercase cell contents
         match = true;
@@ -102,7 +106,9 @@ function sortTableAndToggleArrow(columnName) {
   currentDirection = currentDirection === "asc" ? "desc" : "asc";
 
   // Set arrow visualization based on direction
-  arrowElement.innerHTML = '<span class="arrow ' + (currentDirection === "desc" ? "up" : "down") + '"></span>';
+  arrowElement.innerHTML = '<span class="arrow ' +
+                           (currentDirection === "desc" ? "up" : "down") +
+                           '"></span>';
   arrowElement.setAttribute("data-direction", currentDirection);
 
   // Sort the table
@@ -113,9 +119,10 @@ function sortTable(columnName, direction) {
   var table = document.getElementById("table");
   var tbody = table.tBodies[0];
   var rows = Array.from(tbody.getElementsByTagName("tr"));
-  var columnIndex = getColumnIndex(columnName); // Get the index of the clicked column
+  var columnIndex =
+      getColumnIndex(columnName); // Get the index of the clicked column
   // Sorting logic
-  rows.sort(function (a, b) {
+  rows.sort(function(a, b) {
     var x = a.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
     var y = b.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
 
@@ -144,7 +151,6 @@ function getColumnIndex(columnName) {
     return 3;
 }
 
-
 const convertViewsStringToNumber = (formattedCount) => {
   const match = formattedCount.match(/([\d.]+)\s*(billion|million)?/i);
 
@@ -154,15 +160,16 @@ const convertViewsStringToNumber = (formattedCount) => {
   }
 
   const numericValue = parseFloat(match[1]);
-  const unit = (match[2] || "").toLowerCase(); // Use an empty string if unit is undefined
+  const unit = (match[2] ||
+                "").toLowerCase(); // Use an empty string if unit is undefined
 
   switch (unit) {
-    case "billion":
-      return numericValue * 1000000000;
-    case "million":
-      return numericValue * 1000000;
-    default:
-      return numericValue;
+  case "billion":
+    return numericValue * 1000000000;
+  case "million":
+    return numericValue * 1000000;
+  default:
+    return numericValue;
   }
 };
 
