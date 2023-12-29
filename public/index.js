@@ -78,8 +78,12 @@ function filterTable() {
     const cells = rows[i].getElementsByTagName("td");
     let match = false;
     for (let j = 0; j < cells.length; j++) {
-      const query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
-      const cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
+      const query =
+          input.value.trim()
+              .toLowerCase(); // Convert query to lowercase and trim whitespace
+      const cellText =
+          cells[j]
+              .innerHTML.toLowerCase(); // Convert cell contents to lowercase
       if (cellText.indexOf(query) !== -1) {
         // Compare lowercase query with lowercase cell contents
         match = true;
@@ -106,7 +110,8 @@ function sortTableAndToggleArrow(columnName) {
   currentDirection = currentDirection === "asc" ? "desc" : "asc";
 
   // Set arrow visualization based on direction
-  arrowElement.innerHTML = `<span class="arrow ${currentDirection === "desc" ? "up" : "down"}"></span>`;
+  arrowElement.innerHTML = `<span class="arrow ${
+      currentDirection === "desc" ? "up" : "down"}"></span>`;
   arrowElement.setAttribute("data-direction", currentDirection);
 
   // Sort the table
@@ -119,7 +124,8 @@ function sortTableAndToggleArrow(columnName) {
  * @returns index of column
  */
 function getColumnIndex(columnName) {
-  if (columnName === "totalViews") return 3;
+  if (columnName === "totalViews")
+    return 3;
   return 0;
 }
 
@@ -137,15 +143,16 @@ const convertViewsStringToNumber = (formattedCount) => {
   }
 
   const numericValue = parseFloat(match[1]);
-  const unit = (match[2] ?? "").toLowerCase(); // Use an empty string if unit is undefined
+  const unit = (match[2] ??
+                "").toLowerCase(); // Use an empty string if unit is undefined
 
   switch (unit) {
-    case "billion":
-      return numericValue * 1000000000;
-    case "million":
-      return numericValue * 1000000;
-    default:
-      return numericValue;
+  case "billion":
+    return numericValue * 1000000000;
+  case "million":
+    return numericValue * 1000000;
+  default:
+    return numericValue;
   }
 };
 
@@ -158,9 +165,10 @@ function sortTable(columnName, direction) {
   const table = document.getElementById("table");
   const tbody = table.tBodies[0];
   const rows = Array.from(tbody.getElementsByTagName("tr"));
-  const columnIndex = getColumnIndex(columnName); // Get the index of the clicked column
+  const columnIndex =
+      getColumnIndex(columnName); // Get the index of the clicked column
   // Sorting logic
-  rows.sort((a, b) =>{
+  rows.sort((a, b) => {
     let x = a.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
     let y = b.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
 
