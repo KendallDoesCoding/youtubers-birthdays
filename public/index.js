@@ -67,19 +67,19 @@ count.textContent = `${rowsLength}`;
 
 function filterTable() {
   // Get the search input and table elements
-  var input = document.getElementById("search-input");
-  var table = document.getElementById("table");
+  const input = document.getElementById("search-input");
+  const table = document.getElementById("table");
 
   // Get all the table rows except the first one (header)
-  var rows = table.tBodies[0].getElementsByTagName("tr");
+  const rows = table.tBodies[0].getElementsByTagName("tr");
 
   // Loop through all the rows and hide those that don't match the search query
-  for (var i = 0; i < rows.length; i++) {
-    var cells = rows[i].getElementsByTagName("td");
-    var match = false;
-    for (var j = 0; j < cells.length; j++) {
-      var query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
-      var cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
+  for (let i = 0; i < rows.length; i++) {
+    const cells = rows[i].getElementsByTagName("td");
+    let match = false;
+    for (let j = 0; j < cells.length; j++) {
+      const query = input.value.trim().toLowerCase(); // Convert query to lowercase and trim whitespace
+      const cellText = cells[j].innerHTML.toLowerCase(); // Convert cell contents to lowercase
       if (cellText.indexOf(query) !== -1) {
         // Compare lowercase query with lowercase cell contents
         match = true;
@@ -94,35 +94,78 @@ function filterTable() {
   }
 }
 
+/**
+ * Function to sort the table data and toggle the arrow button in header
+ * @param columnName Name of column on which sorting needs to be performed
+ */
 function sortTableAndToggleArrow(columnName) {
-  var arrowElement = document.getElementById(columnName + "-arrow");
-  var currentDirection = arrowElement.getAttribute("data-direction") || "desc";
+  const arrowElement = document.getElementById(`${columnName}-arrow`);
+  let currentDirection = arrowElement.getAttribute("data-direction") ?? "desc";
 
   // Toggle arrow direction
   currentDirection = currentDirection === "asc" ? "desc" : "asc";
 
   // Set arrow visualization based on direction
-  arrowElement.innerHTML =
-    '<span class="arrow ' +
-    (currentDirection === "desc" ? "up" : "down") +
-    '"></span>';
+  console.log(`<span class="arrow $(currentDirection === "desc" ? "up" : "down")"></span>`);
+  arrowElement.innerHTML = `<span class="arrow ${currentDirection === "desc" ? "up" : "down"}"></span>`;
   arrowElement.setAttribute("data-direction", currentDirection);
 
   // Sort the table
   sortTable(columnName, currentDirection);
 }
 
-function sortTable(columnName, direction) {
-  var table = document.getElementById("table");
-  var tbody = table.tBodies[0];
-  var rows = Array.from(tbody.getElementsByTagName("tr"));
-  var columnIndex = getColumnIndex(columnName); // Get the index of the clicked column
-  // Sorting logic
-  rows.sort(function (a, b) {
-    var x = a.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
-    var y = b.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
+/**
+ * Get index of column
+ * @param columnName Name of column
+ * @returns index of column
+ */
+function getColumnIndex(columnName) {
+  if (columnName === "totalViews") return 3;
+  return 0;
+}
 
-    if (columnName == "totalViews") {
+/**
+ * Convert totalViews String to Number
+ * @param formattedCount TotalViews count as string
+ * @returns Integer value of TotalViews count
+ */
+const convertViewsStringToNumber = (formattedCount) => {
+  const match = formattedCount.match(/([\d.]+)\s*(billion|million)?/i);
+
+  if (!match) {
+    // Invalid format, return as is
+    return parseFloat(formattedCount);
+  }
+
+  const numericValue = parseFloat(match[1]);
+  const unit = (match[2] ?? "").toLowerCase(); // Use an empty string if unit is undefined
+
+  switch (unit) {
+    case "billion":
+      return numericValue * 1000000000;
+    case "million":
+      return numericValue * 1000000;
+    default:
+      return numericValue;
+  }
+};
+
+/**
+ * Sort the table data
+ * @param columnName Name of column on which sorting needs to be performed
+ * @param direction direction could be ascending or descending
+ */
+function sortTable(columnName, direction) {
+  const table = document.getElementById("table");
+  const tbody = table.tBodies[0];
+  const rows = Array.from(tbody.getElementsByTagName("tr"));
+  const columnIndex = getColumnIndex(columnName); // Get the index of the clicked column
+  // Sorting logic
+  rows.sort((a, b) =>{
+    let x = a.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
+    let y = b.getElementsByTagName("td")[columnIndex].innerHTML.toLowerCase();
+
+    if (columnName === "totalViews") {
       x = convertViewsStringToNumber(x);
       y = convertViewsStringToNumber(y);
     }
@@ -135,36 +178,10 @@ function sortTable(columnName, direction) {
   });
 
   // Reorder the rows in the table
-  for (var i = 0; i < rows.length; i++) {
+  for (let i = 0; i < rows.length; i++) {
     tbody.appendChild(rows[i]);
   }
 }
 
-function getColumnIndex(columnName) {
-  if (columnName == "category") return 0;
-  else if (columnName == "totalViews") return 3;
-}
-
-const convertViewsStringToNumber = (formattedCount) => {
-  const match = formattedCount.match(/([\d.]+)\s*(billion|million)?/i);
-
-  if (!match) {
-    // Invalid format, return as is
-    return parseFloat(formattedCount);
-  }
-
-  const numericValue = parseFloat(match[1]);
-  const unit = (match[2] || "").toLowerCase(); // Use an empty string if unit is undefined
-
-  switch (unit) {
-    case "billion":
-      return numericValue * 1000000000;
-    case "million":
-      return numericValue * 1000000;
-    default:
-      return numericValue;
-  }
-};
-
-var input = document.getElementById("search-input");
+const input = document.getElementById("search-input");
 input.addEventListener("input", filterTable);
