@@ -106,7 +106,6 @@ function sortTableAndToggleArrow(columnName) {
   currentDirection = currentDirection === "asc" ? "desc" : "asc";
 
   // Set arrow visualization based on direction
-  console.log(`<span class="arrow $(currentDirection === "desc" ? "up" : "down")"></span>`);
   arrowElement.innerHTML = `<span class="arrow ${currentDirection === "desc" ? "up" : "down"}"></span>`;
   arrowElement.setAttribute("data-direction", currentDirection);
 
