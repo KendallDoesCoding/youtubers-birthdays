@@ -108,19 +108,19 @@ a:link {
     background-color: transparent;
     text-decoration: none;
   }
-  
+
   a:visited {
     color: black;
     background-color: transparent;
     text-decoration: none;
   }
-  
+
   a:hover {
     color: blue;
     background-color: transparent;
     text-decoration: none;
   }
-  
+
   a:active {
     color: black;
     background-color: transparent;
@@ -192,29 +192,29 @@ a:active {
 /* Search form */
 form {
   display: flex;
-  align-items: center; 
-  margin-top: 15px; 
+  align-items: center;
+  margin-top: 15px;
   margin-bottom: 10px
 }
 input {
-  padding: 10px; 
+  padding: 10px;
   width: auto;
   border-radius: 5px;
-  border: none; 
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-input:focus { 
+input:focus {
   border-radius: 5px;
-  border: none; 
+  border: none;
   box-shadow: 0 0 5px #007BFF;
 
 }
 button {
   background-color: #007BFF;
-  color: white; 
+  color: white;
   padding: 10px 20px;
-  border-radius: 5px; 
+  border-radius: 5px;
   border: none;
   cursor: pointer;
 }
@@ -259,4 +259,32 @@ button {
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.arrow-container {
+  display: inline;
+  position: relative;
+}
+
+.arrow {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin: 2px 5px;
+  position: absolute;
+}
+
+th:hover .arrow {
+  visibility: visible;
+}
+
+.up {
+  border-bottom: 5px solid black;
+}
+
+.down {
+  border-top: 5px solid black;
+  margin-top: 10px
 }
